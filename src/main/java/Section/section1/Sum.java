@@ -1,0 +1,19 @@
+package Section.section1;
+
+/**
+ * Created by YooHyeongJu on 2017-02-09.
+ */
+public class Sum implements Expression{
+    public Money augend;
+    public Money addend;
+
+    public Sum(Money augend, Money addend) {
+        this.augend = augend;
+        this.addend = addend;
+    }
+
+    public Money reduce(String to) {
+        int amount = augend.amount + addend.amount;
+        return new Money(amount, to);
+    }
+}
